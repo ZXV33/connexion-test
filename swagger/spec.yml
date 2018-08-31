@@ -1,0 +1,47 @@
+swagger: "2.0"
+info:
+  description: "テストデスクリプション"
+  version: "1.0.0"
+  title: "テストAPI"
+host: "テストホスト"
+basePath: "/v2"
+tags:
+- name: "タグ1"
+  description: "Swaggerのタグのテスト"
+  externalDocs:
+    description: "詳細はここ"
+    url: "http://swagger.io"
+schemes:
+- "https"
+- "http"
+
+paths:
+  /test:
+    get:
+      tags:
+      - タグ1
+      summary: "テストGETAPI"
+      description: "AAAAAAA"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+#      parameters:
+      operationId: myfunc.method
+      responses:
+        200:
+          description: "get test success"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Test"
+definitions:
+  Test:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+
